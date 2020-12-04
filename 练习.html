@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var obj = {
+        //     name: '杰',
+        //     age: 18
+        // };
+        // function get(num1, num2) {
+        //     console.log(this);
+        //     console.log(num1 + num2);
+        // };
+        // get.call(123);//this指向基本包装类型Number对象
+        // get.call('abc');//this指向基本包装类型String对象
+        // get.call(true);//this指向基本包装类型Boolean对象
+        // get.call(null);//this指向window
+        // get.call(undefined);//this指向window
+        // get.call();//this指向window
+        // get.call(window);//this指向window
+        // var arr=[12,30,80,40,60,78];
+        // //不改this指向，给它一个数组arr，数组的每一个元素就依次交给max
+        // var max=Math.max.apply(Math,arr);
+        // console.log(max);
+
+        // var weiArr = {
+        //     0: 920,
+        //     1: 230,
+        //     2: 512,
+        //     3: 489,
+        //     length: 4
+        // };
+        // Array.prototype.sort.call(weiArr, function (a, b){
+        //     return a-b;
+        // });//得到一个排序好的伪数组
+        // function Get(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        // };
+        // function Student(name, age, score) {
+        //     //继承，调用Get函数，那意味着就会执行Get函数体
+        //     //调用Get用的函数上下文的模式调用的，意味着Get函数里面的this改了，改成当前这个this：Student
+        //     Get.call(this, name, age)
+        //     this.score = score;
+        // };
+        // var s1 = new Student('张三', 18, 100);
+        // console.log(s1);
+
+        // console.log(Object.prototype.toString.call(null));//[object Null]
+        // var reg1 = /男|女/;
+        // var reg2 = reg1.test('人妖是男的还是女的？');
+        // console.log(reg2);//true
+        // console.log(/\d/.test("ferdf125"));//ture 预定义类，只要检测的字符串中出现数字就是ture
+        // console.log(/^\d/.test("ybzdfrg"));//false如果检测的字符串的起始位置是数字就是ture
+        // console.log(/^\d/.test("45yBz"));//ture
+        // console.log(/^\d/.test("ysdf65a"));//false
+        // console.log(/^4a/.test("ferg4a"));//false
+        // console.log(/^4a/.test("4afretg"));//ture
+        // console.log(/^a$/.test('accaghrfht'));//false
+        // console.log(/^a$/.test('a'));//ture
+        // console.log(/^a$/.test('aaat'));//false
+        // console.log(/^a$/.test('ca'));//false
+        // console.log(/^a$/.test('acc'));//false
+        // console.log(/[^0-5][^a-g]/.test('6z'));//ture
+        // console.log(/[^0-5][^a-g]/.test('6zy7'));//ture 
+        // console.log(/[^0-5][^a-g]/.test('z7'));//ture
+        // console.log(/[^0-5][^a-g]/.test('b4'));//ture
+        // console.log(/[^0-5][^a-g]/.test('4yaaabbbc7cc'));//ture  c7满足
+        // console.log(/[^0-5][^a-g]/.test('4yaaabbbc7cc9x'));//ture c7,c9,9x都是满足
+        // console.log(/^colo{2,3}r$/.test('colr'));//false
+        // console.log(/^colo{2,3}r$/.test('color'));//false
+        // console.log(/^colo{2,3}r$/.test('coloor'));//ture
+        // console.log(/^colo{2,3}r$/.test('colooor'));//false
+        // console.log(/^colo{2,3}r$/.test('colooorcolooor'));//false 不符合严格匹配
+        // console.log(/^colo{2,3}r$/.test('olooor'));//false 不符合严格匹配
+        // console.log(/^[\u4e00-\u9fa5]{2,4}$/.test('刘'));//false
+        // console.log(/^[\u4e00-\u9fa5]{2,4}$/.test('刘杰'));//ture 
+
+        // var num1 = '哈哈哈，吼吼吼，呵呵呵';
+        // var num2 = num1.replace(/，/g,'.');
+        // console.log(num2);//哈哈哈.吼吼吼.呵呵呵um1
+        var num1 = '呵呵呵呵100哈哈哈哈200嘿嘿嘿300';
+        var num2 = num1.match(/\d+/g);
+        console.log(num2);//Array(3)
+        //0: "100"
+        //1: "200"
+        //2: "300"
+        //length: 3
+        //__proto__: Array(0
+
+
+        var str = "123123@xx.com,fangfang@valuedopinions.cn 286669312@qq.com 2、emailenglish@emailenglish.englishtown.com 286669312@qq.com...";
+        var arr = str.match(/\w+@\w+(\.\w+)+/g);
+        console.log(arr);
+
+        //分组练习2
+        var str = "1221你好2921我好2121它好8998他好2112";
+        var reg = /(\d)(\d)\2\1/g;  //
+
+        //\1 匹配的是 所获取的第1个()匹配的引用。例如，(\d)\1 匹配两个连续数字字符。如33aa 中的33
+        //\2 匹配的是 所获取的第2个()匹配的引用。
+
+        var arr = str.match(reg);
+        console.log(arr);
+
+
+    </script>
+
+</body>
+
+</html>
